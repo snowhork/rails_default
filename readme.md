@@ -36,6 +36,12 @@ bin/spring [rails command]
 fig run [container name] [command]
 ```
 
+### 環境変数を適用
+```
+cp ./rails_app/.env.sample ./rails_app/.env
+```
+
+
 ### binding.pryで対話実行したい時
 
 

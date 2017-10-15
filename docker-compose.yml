@@ -15,13 +15,13 @@ services:
 
   app: &app_base
     build: 
-      context: ./mfds
+      context: ./rails_app
       args:
         PORT: 3000
     command: /bin/sh -c "rm -f /app/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    env_file: ./mfds/.env
+    env_file: ./rails_app/.env
     volumes:
-      - ./mfds:/app      
+      - ./rails_app:/app      
     ports:
       - 3000:3000
     links:
@@ -39,7 +39,7 @@ services:
     environment:
       SPRING_SOCKET: /tmp/spring/spring.sock
     volumes:
-      - ./mfds:/app  
+      - ./rails_app:/app  
       - spring:/tmp/spring/
 
 volumes:
