@@ -1,0 +1,10 @@
+## environment
+
+spring/*.pid
+
+## mfds 
+rails/log/*
+rails/tmp/*
+rails/vendor/*
+rails/.env
+
