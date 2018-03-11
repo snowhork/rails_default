@@ -41,6 +41,16 @@ services:
       - ./rails:/app
       - spring:/tmp/spring/
 
+  webpack:
+    <<: *app_base
+    command: /bin/sh -c "npm install && ./node_modules/.bin/webpack -w"
+    ports: []
+    tty: false
+    stdin_open: false
+    pid: host
+    volumes:
+      - ./mfds:/app
+
 volumes:
   sql-data:
   spring:
